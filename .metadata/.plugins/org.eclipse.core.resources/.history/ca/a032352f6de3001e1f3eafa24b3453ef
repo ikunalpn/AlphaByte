@@ -1,0 +1,5 @@
+package com.curesync.controller;
+
+public class PatientController {
+
+}
