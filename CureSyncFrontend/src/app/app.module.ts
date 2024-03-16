@@ -16,6 +16,7 @@ import { PatPrescriptionComponent } from './pages/pat-prescription/pat-prescript
 import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.component';
 import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
 import { PatAccountComponent } from './pages/pat-account/pat-account.component';
+import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,7 @@ import { PatAccountComponent } from './pages/pat-account/pat-account.component';
     HomeComponent,
     PatientDetailsComponent,
     PatientComponent,
-    PatientDashboardComponent,
-    PatPrescriptionComponent,
-    PatLabreportComponent,
-    PatVaccineComponent,
-    PatAccountComponent
+    PatientDashboardComponent
   ],
   imports: [
     BrowserModule,

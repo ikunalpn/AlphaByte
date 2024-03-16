@@ -10,6 +10,7 @@ import { PatPrescriptionComponent } from './pages/pat-prescription/pat-prescript
 import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.component';
 import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
 import { PatAccountComponent } from './pages/pat-account/pat-account.component';
+import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,11 @@ const routes: Routes = [
     pathMatch:"full"
   },
   {
+    path:"docdashboard",
+    component:DocdashboardComponent,
+    pathMatch:"full"
+  },
+  {
     path:"patient-prescription",
     component:PatPrescriptionComponent,
     pathMatch:"full"
@@ -61,7 +67,7 @@ const routes: Routes = [
     path:"patient-account",
     component:PatAccountComponent,
     pathMatch:"full"
-  },
+  }
 ];
 
 @NgModule({

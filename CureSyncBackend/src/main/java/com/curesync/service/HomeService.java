@@ -81,6 +81,28 @@ public class HomeService {
 			return detailsRepo.save(patientDetails);
 	}
     
+    public PatientDetails saveClaim(String patientName, MultipartFile mediclaimImage) {
+		PatientDetails pt=detailsRepo.findByPatientName(patientName);
+		pt.setMediclaim(saveImageToStorage(mediclaimImage));
+		return detailsRepo.save(pt);
+	}
+    
+    public PatientDetails saveLab(String patientName, MultipartFile labReportImage) {
+		PatientDetails pt=detailsRepo.findByPatientName(patientName);
+		pt.setMediclaim(saveImageToStorage(labReportImage));
+		return detailsRepo.save(pt);
+	}
+    public PatientDetails savePrescription(String patientName, MultipartFile prescriptionImage) {
+		PatientDetails pt=detailsRepo.findByPatientName(patientName);
+		pt.setMediclaim(saveImageToStorage(prescriptionImage));
+		return detailsRepo.save(pt);
+	}
+    public PatientDetails saveVaccination(String patientName, MultipartFile vaccinationImage) {
+		PatientDetails pt=detailsRepo.findByPatientName(patientName);
+		pt.setMediclaim(saveImageToStorage(vaccinationImage));
+		return detailsRepo.save(pt);
+	}
+    
     private String saveImageToStorage(MultipartFile imageFile) {
         if (imageFile == null || imageFile.isEmpty()) {
             return null;
@@ -102,6 +124,15 @@ public class HomeService {
             return null;
         }
     }
+
+
+	public PatientDetails getPatientDetailsByName(String patientName) {
+		// TODO Auto-generated method stub
+		return detailsRepo.findByPatientName(patientName);
+	}
+
+
+	
     
     
     
