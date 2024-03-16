@@ -10,7 +10,7 @@ export class ApisService {
 
   constructor(private http:HttpClient,) { }
 
-  private headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
+  // private headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
 
   public login(data:any){
 
@@ -22,6 +22,6 @@ export class ApisService {
     return this.http.post(`${baseUrl}/signup`,data);
   }
   savePatientDetails(formData: FormData): Observable<any> {
-    return this.http.post(`${baseUrl}/details`, formData, { headers: this.headers });
+    return this.http.post(`${baseUrl}/details`, formData );
   }
 }
