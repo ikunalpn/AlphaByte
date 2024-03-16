@@ -1,6 +1,7 @@
 package com.curesync.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,20 +42,22 @@ public class HomeService {
     
     
     //login
-    public String login(String username, String password) {
+    public ResponseEntity<String> login(String username, String password) {
         Optional<User> optionalUser = userRepo.findByUsername(username);
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             
             if (passwordEncoder.matches(password, user.getPassword())) {
-                return user.getRole();
+                // Return role in a JSON object
+                return ResponseEntity.ok("{\"role\": \"" + user.getRole() + "\"}");
             }
         }
 
-        
-        return "Failed";
+        // Return failure message in a JSON object
+        return ResponseEntity.ok("{\"message\": \"Failed\"}");
     }
+
     
     //patient details
     public PatientDetails savePatientDetails(String patientName, float weight, float height, String bloodGroup,
