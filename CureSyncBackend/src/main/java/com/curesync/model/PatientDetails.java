@@ -24,6 +24,11 @@ public class PatientDetails {
 	private String prescription;
 	private String vaccination;
 	private List<String> vaccDetails;
+	private float bp;
+	private float sugar;
+	private float bodyTemp;
+	private float pulseRate;
+	private float spo2;
 	public long getPatientId() {
 		return patientId;
 	}
@@ -96,16 +101,42 @@ public class PatientDetails {
 	public void setVaccDetails(List<String> vaccDetails) {
 		this.vaccDetails = vaccDetails;
 	}
-	@Override
-	public String toString() {
-		return "PatientDetails [patientId=" + patientId + ", patientName=" + patientName + ", weight=" + weight
-				+ ", height=" + height + ", bloodGroup=" + bloodGroup + ", allergies=" + allergies + ", chronicIllness="
-				+ chronicIllness + ", mediclaim=" + mediclaim + ", labReports=" + labReports + ", prescription="
-				+ prescription + ", vaccination=" + vaccination + ", vaccDetails=" + vaccDetails + "]";
+	
+	public float getBp() {
+		return bp;
 	}
+	public void setBp(float bp) {
+		this.bp = bp;
+	}
+	public float getSugar() {
+		return sugar;
+	}
+	public void setSugar(float sugar) {
+		this.sugar = sugar;
+	}
+	public float getBodyTemp() {
+		return bodyTemp;
+	}
+	public void setBodyTemp(float bodyTemp) {
+		this.bodyTemp = bodyTemp;
+	}
+	public float getPulseRate() {
+		return pulseRate;
+	}
+	public void setPulseRate(float pulseRate) {
+		this.pulseRate = pulseRate;
+	}
+	public float getSpo2() {
+		return spo2;
+	}
+	public void setSpo2(float spo2) {
+		this.spo2 = spo2;
+	}
+	
 	public PatientDetails(long patientId, String patientName, float weight, float height, String bloodGroup,
 			List<String> allergies, List<String> chronicIllness, String mediclaim, String labReports,
-			String prescription, String vaccination, List<String> vaccDetails) {
+			String prescription, String vaccination, List<String> vaccDetails, float bp, float sugar, float bodyTemp,
+			float pulseRate, float spo2) {
 		super();
 		this.patientId = patientId;
 		this.patientName = patientName;
@@ -119,6 +150,19 @@ public class PatientDetails {
 		this.prescription = prescription;
 		this.vaccination = vaccination;
 		this.vaccDetails = vaccDetails;
+		this.bp = bp;
+		this.sugar = sugar;
+		this.bodyTemp = bodyTemp;
+		this.pulseRate = pulseRate;
+		this.spo2 = spo2;
+	}
+	@Override
+	public String toString() {
+		return "PatientDetails [patientId=" + patientId + ", patientName=" + patientName + ", weight=" + weight
+				+ ", height=" + height + ", bloodGroup=" + bloodGroup + ", allergies=" + allergies + ", chronicIllness="
+				+ chronicIllness + ", mediclaim=" + mediclaim + ", labReports=" + labReports + ", prescription="
+				+ prescription + ", vaccination=" + vaccination + ", vaccDetails=" + vaccDetails + ", bp=" + bp
+				+ ", sugar=" + sugar + ", bodyTemp=" + bodyTemp + ", pulseRate=" + pulseRate + ", spo2=" + spo2 + "]";
 	}
 	public PatientDetails() {
 		super();
