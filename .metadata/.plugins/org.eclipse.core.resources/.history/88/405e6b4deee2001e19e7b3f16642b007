@@ -1,0 +1,5 @@
+package com.curesync.model;
+
+public class User {
+
+}
