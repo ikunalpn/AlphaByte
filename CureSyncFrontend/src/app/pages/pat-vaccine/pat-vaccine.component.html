@@ -1,1 +1,65 @@
-<p>pat-vaccine works!</p>
+<!-- patient-dashboard.component.html -->
+<div class="flex">
+    <!-- Sticky Sidebar -->
+    <div class="sidebar bg-gray-800 text-gray-100 flex flex-col justify-between w-64 px-4 py-6 sticky top-0 h-screen">
+        <div>
+            <h2 class="text-xl font-bold mb-4">Patient Dashboard</h2>
+            <nav>
+                <a routerLink="/patient-dashboard" class="block py-2 hover:bg-gray-900 rounded text-white">Home</a>
+                <a routerLink="/patient-prescription"
+                    class="block py-2 hover:bg-gray-900 rounded text-white">Prescription</a>
+                <a routerLink="/patient-lab-reports" class="block py-2 hover:bg-gray-900 rounded text-white">Lab
+                    Reports</a>
+                <a routerLink="/patient-vaccine" class="block py-2 hover:bg-gray-900 rounded text-white">Vaccination</a>
+            </nav>
+        </div>
+        <div>
+            <a routerLink="/patient-account" class="block py-2 hover:bg-gray-900 rounded text-white">My Account</a>
+            <a routerLink="/login" class="block py-2 hover:bg-gray-900 rounded text-white">Logout</a>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+        <img src="https://media.licdn.com/dms/image/D4D03AQFaLjlGduTW4w/profile-displayphoto-shrink_400_400/0/1708783318084?e=1715817600&v=beta&t=wMKSwUAGj22Qgz3Mo6MzUfq-2C9cEQu1TlJf5qPEsms"
+            alt="Patient Image" class="w-16 h-16 rounded-full mr-4">
+        <h1 class="text-3xl font-bold mb-6">Welcome, [Patient Name]</h1>
+
+
+        <!-- Vaccination Record Section -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-2">Vaccination Record</h3>
+            <!-- Vaccination Record Image -->
+            <img src="vaccination_record_image_url_here" alt="Vaccination Record" class="w-full mb-4">
+
+            <!-- Vaccination Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Vaccination Card -->
+                <div class="bg-gray-100 rounded-lg shadow-md p-4">
+                    <h4 class="text-lg font-semibold mb-2">Vaccine Name</h4>
+                    <p class="mb-2">Given Date: [Given Date]</p>
+                    <p class="mb-2">Type of Vaccine: [Type of Vaccine]</p>
+                    <p class="mb-2">Given by: [Doctor Name]</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-md p-4">
+                    <h4 class="text-lg font-semibold mb-2">Vaccine Name</h4>
+                    <p class="mb-2">Given Date: [Given Date]</p>
+                    <p class="mb-2">Type of Vaccine: [Type of Vaccine]</p>
+                    <p class="mb-2">Given by: [Doctor Name]</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-md p-4">
+                    <h4 class="text-lg font-semibold mb-2">Vaccine Name</h4>
+                    <p class="mb-2">Given Date: [Given Date]</p>
+                    <p class="mb-2">Type of Vaccine: [Type of Vaccine]</p>
+                    <p class="mb-2">Given by: [Doctor Name]</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-md p-4">
+                    <h4 class="text-lg font-semibold mb-2">Vaccine Name</h4>
+                    <p class="mb-2">Given Date: [Given Date]</p>
+                    <p class="mb-2">Type of Vaccine: [Type of Vaccine]</p>
+                    <p class="mb-2">Given by: [Doctor Name]</p>
+                </div>
+                <!-- Repeat the above card for each vaccination -->
+            </div>
+        </div>
+    </div>
+</div>
