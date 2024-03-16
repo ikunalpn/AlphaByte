@@ -10,6 +10,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { PatientComponent } from './pages/patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,

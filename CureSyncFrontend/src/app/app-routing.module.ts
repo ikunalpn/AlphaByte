@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
     path: "details",
     component: PatientDetailsComponent,
     pathMatch: "full"
+  },
+  {
+    path:"patient",
+    component:PatientComponent,
+    pathMatch:"full"
   }
 ];
 
