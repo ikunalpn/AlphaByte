@@ -1,5 +1,6 @@
 package com.curesync.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,26 +39,31 @@ public class HomeController {
 	
 	
 	@PostMapping("/details")
-    public ResponseEntity<PatientDetails> savePatientDetails(
-            @RequestParam("patientName") String patientName,
-            @RequestParam(value = "weight", required = false, defaultValue = "0.0") float weight,
-            @RequestParam(value = "height", required = false, defaultValue = "0.0") float height,
-            @RequestParam("bloodGroup") String bloodGroup,
-            @RequestParam("allergies") List<String> allergies,
-            @RequestParam("chronicIllness") List<String> chronicIllness,
-            // Other request parameters
-            @RequestParam("mediclaimImage") MultipartFile mediclaimImage,
-            @RequestParam("labReportsImage") MultipartFile labReportsImage,
-            @RequestParam("prescriptionImage") MultipartFile prescriptionImage,
-            @RequestParam("vaccinationImage") MultipartFile vaccinationImage,
-            @RequestParam("vaccDetails") List<String> vaccDetails) {
+	public ResponseEntity<PatientDetails> savePatientDetails(
+	        @RequestParam("patientName") String patientName,
+	        @RequestParam(value = "weight", required = false, defaultValue = "0.0") float weight,
+	        @RequestParam(value = "height", required = false, defaultValue = "0.0") float height,
+	        @RequestParam("bloodGroup") String bloodGroup,
+	        @RequestParam("allergies") String allergiesStr,
+	        @RequestParam("chronicIllness") String chronicIllnessStr,
+	        // Other request parameters
+	        @RequestParam("mediclaimImage") MultipartFile mediclaimImage,
+	        @RequestParam("labReportsImage") MultipartFile labReportsImage,
+	        @RequestParam("prescriptionImage") MultipartFile prescriptionImage,
+	        @RequestParam("vaccinationImage") MultipartFile vaccinationImage,
+	        @RequestParam("vaccDetails") String vaccDetailsStr) {
 
-		System.out.println("It came here");
-        PatientDetails patientDetails = service.savePatientDetails(
-                patientName, weight,height,bloodGroup,allergies,chronicIllness /* other patient details */,
-                mediclaimImage, labReportsImage, prescriptionImage, vaccinationImage,
-                vaccDetails);
+	    List<String> allergies = Arrays.asList(allergiesStr.split(","));
+	    List<String> chronicIllness = Arrays.asList(chronicIllnessStr.split(","));
+	    List<String> vaccDetails = Arrays.asList(vaccDetailsStr.split(","));
 
-        return ResponseEntity.ok(patientDetails);
-    }
+	    System.out.println(vaccDetails +" "+ allergies);
+	    PatientDetails patientDetails = service.savePatientDetails(
+	            patientName, weight, height, bloodGroup, allergies, chronicIllness,
+	            mediclaimImage, labReportsImage, prescriptionImage, vaccinationImage,
+	            vaccDetails);
+
+	    return ResponseEntity.ok(patientDetails);
+	}
+
 }
