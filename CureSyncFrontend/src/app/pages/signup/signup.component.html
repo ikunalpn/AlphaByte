@@ -1,49 +1,42 @@
 <div class ='new'>
     <div class="wrapper">
-        <form>
+        <form (ngSubmit)="signup()">
           <h1>SignUp</h1>
           <div class="input-box">
-            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Username" name="username" [(ngModel)]="userData.username" required>
             <i class='bx bxs-user'></i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Age" required>
+            <input type="number" placeholder="Age" name="age" [(ngModel)]="userData.age" required>
             <i class='bx bxs-user'></i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Contact Number" required>
+            <input type="text" placeholder="Contact Number" name="phoneNo" [(ngModel)]="userData.phoneNo" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
-          <select class = "input-box" id="role" name="role"style ="color: black;">
+          <select class = "input-box" id="role" name="role"style ="color: black;"   [(ngModel)]="userData.role">
             <option value="" disabled selected style ="color: black;">Gender</option>
-            <option value="patient" style ="color: black;">Male</option>
-            <option value="doctor" style ="color: black;">Female</option>
-            <option value="patient" style ="color: black;">Other</option>
+            <option value="PATIENT" style ="color: black;">Male</option>
+            <option value="DOCTOR" style ="color: black;">Female</option>
+            
           </select>
           <div class="input-box">
-            <input type="text" placeholder="City" required>
+            <input type="text" placeholder="City"  name="city" [(ngModel)]="userData.city" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="State" required>
+            <input type="text" placeholder="State"  name="state" [(ngModel)]="userData.state" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
-          <select class = "input-box" id="role" name="role"style ="color: black;">
-            <option value="" disabled selected style ="color: black;">Choose Role</option>
-            <option value="patient" style ="color: black;">Patient</option>
-            <option value="doctor" style ="color: black;">Doctor</option>
-          </select>
+          
             
           <div class="input-box">
-            <input type="email" placeholder="Email" required>
+            <input type="email" placeholder="Email"  name="email" [(ngModel)]="userData.email" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
+          
           <div class="input-box">
-            <input type="password" placeholder="Password" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-          <div class="input-box">
-            <input type="password" placeholder="Confirm password" required>
+            <input type="password" placeholder="Password"  name="password" [(ngModel)]="userData.password" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
           <button type="submit" class="btn">Sign Up</button>

@@ -9,8 +9,14 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientComponent } from './pages/patient/patient.component';
+import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
+import { PatPrescriptionComponent } from './pages/pat-prescription/pat-prescription.component';
+import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.component';
+import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
+import { PatAccountComponent } from './pages/pat-account/pat-account.component';
+import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +25,12 @@ import { PatientComponent } from './pages/patient/patient.component';
     SignupComponent,
     HomeComponent,
     PatientDetailsComponent,
-    PatientComponent
+    PatientComponent,
+    PatientDashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, 
+    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()

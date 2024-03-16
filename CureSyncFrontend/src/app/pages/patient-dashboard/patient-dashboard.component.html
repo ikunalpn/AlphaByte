@@ -1,0 +1,97 @@
+<!-- patient-dashboard.component.html -->
+<div class="flex ">
+   <!-- Sticky Sidebar -->
+ <div class="sidebar bg-gray-800 text-gray-100 flex flex-col justify-between w-64 px-4 py-6 sticky top-0 h-screen">
+    <div>
+      <h2 class="text-xl font-bold mb-4">Patient Dashboard</h2>
+      <nav>
+        <a routerLink="/patient-dashboard" class="block py-2 hover:bg-gray-900 rounded text-white">Home</a>
+        <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Prescription</a>
+        <a routerLink="/patient-lab-reports" class="block py-2 hover:bg-gray-900 rounded text-white">Lab Reports</a>
+        <a routerLink="/patient-vaccine" class="block py-2 hover:bg-gray-900 rounded text-white">Vaccination</a>
+      </nav>
+    </div>
+    <div>
+      <a routerLink="/patient-account" class="block py-2 hover:bg-gray-900 rounded text-white">My Account</a>
+      <a routerLink="/login" class="block py-2 hover:bg-gray-900 rounded text-white">Logout</a>
+    </div>
+  
+ </div>
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+        <img src="https://media.licdn.com/dms/image/D4D03AQFaLjlGduTW4w/profile-displayphoto-shrink_400_400/0/1708783318084?e=1715817600&v=beta&t=wMKSwUAGj22Qgz3Mo6MzUfq-2C9cEQu1TlJf5qPEsms"
+            alt="Patient Image" class="w-16 h-16 rounded-full mr-4">
+        <h1 class="text-3xl font-bold mb-6">Welcome, [Patient Name]</h1>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Upcoming Appointments</h3>
+                <p class="text-4xl font-bold text-green-500">2</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Prescriptions to Refill</h3>
+                <p class="text-4xl font-bold text-red-500">1</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Last Checkup</h3>
+                <p class="text-4xl font-bold text-blue-500">3 months ago</p>
+            </div>
+        </div>
+
+        <!-- Health Metrics -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Health Metrics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Weight -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('weight')">
+                    <h3 class="text-xl font-bold mb-2">Weight</h3>
+                    <p class="text-4xl font-bold text-purple-500">75 kg</p>
+                </div>
+
+                <!-- Blood Pressure -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('bloodPressure')">
+                    <h3 class="text-xl font-bold mb-2">Blood Pressure</h3>
+                    <p class="text-4xl font-bold text-orange-500">120/80 mmHg</p>
+                </div>
+
+                <!-- Cholesterol -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('cholesterol')">
+                    <h3 class="text-xl font-bold mb-2">Cholesterol</h3>
+                    <p class="text-4xl font-bold text-green-500">180 mg/dL</p>
+                </div>
+
+                <!-- Sugar -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('sugar')">
+                    <h3 class="text-xl font-bold mb-2">Sugar</h3>
+                    <p class="text-4xl font-bold text-red-500">120 mg/dL</p>
+                </div>
+
+                <!-- Body Temperature -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('temperature')">
+                    <h3 class="text-xl font-bold mb-2">Body Temperature</h3>
+                    <p class="text-4xl font-bold text-blue-500">98.6°F</p>
+                </div>
+
+                <!-- Pulse Rate -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer"
+                    (click)="openHealthMetricDetails('pulseRate')">
+                    <h3 class="text-xl font-bold mb-2">Pulse Rate</h3>
+                    <p class="text-4xl font-bold text-yellow-500">75 bpm</p>
+                </div>
+
+                <!-- SpO2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" (click)="openHealthMetricDetails('spo2')">
+                    <h3 class="text-xl font-bold mb-2">SpO2</h3>
+                    <p class="text-4xl font-bold text-indigo-500">98%</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

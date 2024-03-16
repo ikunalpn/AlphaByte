@@ -28,7 +28,7 @@ public class HomeController {
 	private HomeService service;
 	
 	@GetMapping("/login/{username}/{password}")
-	public String login(@PathVariable("username")String username,@PathVariable("password")String password) {
+	public ResponseEntity<String> login(@PathVariable("username")String username,@PathVariable("password")String password) {
 		return service.login(username, password);
 	}
 	
