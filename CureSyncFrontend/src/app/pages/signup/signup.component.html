@@ -1,53 +1,73 @@
 <div class ='new' style="padding-top: 40px;">
-    <div class="wrapper" >
-        <form (ngSubmit)="signup()">
-          <h1>SignUp</h1>
-          <div class="input-box">
-            <input type="text" placeholder="Username" name="username" [(ngModel)]="userData.username" required>
-            <i class='bx bxs-user'></i>
-          </div>
-          <div class="input-box">
-            <input type="number" placeholder="Age" name="age" [(ngModel)]="userData.age" required>
-            <i class='bx bxs-user'></i>
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Contact Number" name="phoneNo" [(ngModel)]="userData.phoneNo" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-
-          <div class="input-box">
-            <select name="gender" [(ngModel)]="userData.gender" required>
-              <option value="" disabled selected style="display: none; color: #fff;">Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-
-          <div class="input-box">
-            <input type="text" placeholder="City"  name="city" [(ngModel)]="userData.city" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="State"  name="state" [(ngModel)]="userData.state" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-          
-            
-          <div class="input-box">
-            <input type="email" placeholder="Email"  name="email" [(ngModel)]="userData.email" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-          
-          <div class="input-box">
-            <input type="password" placeholder="Password"  name="password" [(ngModel)]="userData.password" required>
-            <i class='bx bxs-lock-alt' ></i>
-          </div>
-          <button type="submit" class="btn">Sign Up</button>
-          <div class="register-link">
-            <p>Have an account? <a href="#">Login</a></p>
-          </div>
-        </form>
+  <div class="wrapper">
+    <form (ngSubmit)="signup()">
+      <h1>SignUp</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Username" name="username" [(ngModel)]="userData.username" required>
+        <i class='bx bxs-user'></i>
       </div>
-    </div> 
+      <div class="input-box">
+        <input type="number" placeholder="Age" name="age" [(ngModel)]="userData.age" required>
+        <i class='bx bxs-user'></i>
+      </div>
+
+
+      <h5>Gender : &nbsp;</h5>
+      <div class="radio-button-container input-box" style="margin-top: -3px; margin-bottom: -19px;" >
+        <div class="radio-button">
+        <input type="radio" class="radio-button__input" id="radio1" name="radio-group">
+        <label class="radio-button__label" for="radio1">
+          <span class="radio-button__custom"></span>
+          Male
+        </label>
+      </div>
+      <div class="radio-button">
+        <input type="radio" class="radio-button__input" id="radio2" name="radio-group">
+        <label class="radio-button__label" for="radio2">
+          <span class="radio-button__custom"></span>
+          Female
+        </label>
+      </div>
+      <div class="radio-button">
+        <input type="radio" class="radio-button__input" id="radio3" name="radio-group">
+        <label class="radio-button__label" for="radio3">
+          <span class="radio-button__custom"></span>
+          Other
+        </label>
+      </div>
+      </div>
+      
+
+      <div class="input-box">
+        <input type="text" placeholder="Contact Number" name="phoneNo" [(ngModel)]="userData.phoneNo" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      
+
+      <div class="input-box">
+        <input type="text" placeholder="City" name="city" [(ngModel)]="userData.city" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="State" name="state" [(ngModel)]="userData.state" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      <div class="input-box">
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="userData.email" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="userData.password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      
+      <button type="submit" class="btn">Sign Up</button>
+      <div class="register-link">
+        <p style="font-size: 18px;">Have an account? <a href="#">Login</a></p>
+      </div>
+    </form>
+  </div>
+</div>

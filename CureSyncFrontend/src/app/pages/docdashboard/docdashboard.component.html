@@ -38,22 +38,33 @@
         </div>
       </div>
   
-      <h1 class="text-3xl font-bold mb-6">Patients</h1>
+      <h1 class="text-3xl font-bold mb-6" style="margin-top: 20px;">Patients</h1>
       <!-- Patients Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-lg shadow-md p-6">
           <h3 class="text-xl font-bold mb-2">Soham Yeola</h3>
-          <p class="text-4xl font-bold text-green-500">20</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Kunal Pandhare</h3>
-          <p class="text-4xl font-bold text-red-500">22</p>
+          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            (click)="toggleFileInput('soham')">Add Prescription</label>
+          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
         </div>
         <div class="bg-white rounded-lg shadow-md p-6">
           <h3 class="text-xl font-bold mb-2">Mushtaq Ali</h3>
-          <p class="text-4xl font-bold text-blue-500">50</p>
+          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            (click)="toggleFileInput('soham')">Add Prescription</label>
+          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold mb-2">Supranshu Singh</h3>
+          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            (click)="toggleFileInput('soham')">Add Prescription</label>
+          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
         </div>
       </div>
+      
+      
+      
+      
+    
     </div>
   </div>
   
