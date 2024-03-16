@@ -11,10 +11,17 @@
         <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Vaccination</a>
       </nav>
     </div>
-    <div>
-      <a routerLink="/patient-account" class="block py-2 hover:bg-gray-900 rounded text-white">My Account</a>
-      <a routerLink="/login" class="block py-2 hover:bg-gray-900 rounded text-white">Logout</a>
-    </div>
+    <!-- Main Content -->
+    
+  
+      <!-- Stats Cards -->
+      
+  
+      
+      
+      
+    
+    
   </div>
   <!-- Main Content -->
   <div class="flex-1 p-6">
@@ -46,7 +53,10 @@
         <p class="text-xl font-bold text-green-500">Height: {{ patient.height }} feet</p>
         <p class="text-xl font-bold text-green-500">Blood Group: {{ patient.bloodGroup }}</p>
         <p class="text-xl font-bold text-green-500">Chronic Illness: {{ patient.chronicIllness.join(', ') }}</p>
-        
+        <label for="prescriptionInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >Add Prescription</label>
+        <input id="prescriptionInput" type="file" class="mt-4 hidden" (change)="onFileSelected($event)">
+
         <!-- Add other patient properties as needed -->
       </div>
       

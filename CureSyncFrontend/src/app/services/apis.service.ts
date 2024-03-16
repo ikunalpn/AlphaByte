@@ -26,6 +26,15 @@ export class ApisService {
   getPatientDetails(): Observable<PatientDetails[]> {
     return this.http.get<PatientDetails[]>(`${baseUrl}/details`);
   }
+
+  uploadPrescription(file: string, patientName: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('patientName', patientName);
+    formData.append('prescriptionImage', file);
+  
+    return this.http.post(`${baseUrl}/prescription`, formData);
+  }
+  
 }
 // patient-details.model.ts
 export interface PatientDetails {

@@ -20,7 +20,8 @@ export class SignupComponent implements OnInit{
     age:'',
     state:'',
     role:'',
-    phoneNo:''
+    phoneNo:'',
+    gender:''
 
   }
   ngOnInit(): void {
