@@ -11,6 +11,7 @@ import { PatientDetailsComponent } from './pages/patient-details/patient-details
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PatientComponent } from './pages/patient/patient.component';
+import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PatientComponent } from './pages/patient/patient.component';
     SignupComponent,
     HomeComponent,
     PatientDetailsComponent,
-    PatientComponent
+    PatientComponent,
+    PatientDashboardComponent
   ],
   imports: [
     BrowserModule,
