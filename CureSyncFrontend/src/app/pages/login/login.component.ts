@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { ApisService } from '../../services/apis.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private service:ApisService, private snack:MatSnackBar) { }
+  constructor(private service:ApisService, private snack:MatSnackBar,private router:Router) { }
 
   public username='';
   public password='';
@@ -25,6 +26,8 @@ export class LoginComponent implements OnInit{
         console.log(response.body); 
         localStorage.setItem('username', this.username);
         this.snack.open('Login Success', '', { duration: 2000 });
+        this.router.navigateByUrl('/patient-dashboard');
+        
       },
       (error) => {
         console.log(error);

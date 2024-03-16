@@ -34,7 +34,7 @@ const routes: Routes = [
     pathMatch:"full"
   },
   {
-    path:"patient_dashboard",
+    path:"patient-dashboard",
     component:PatientDashboardComponent,
     pathMatch:"full"
   }

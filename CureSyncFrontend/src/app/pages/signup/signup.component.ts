@@ -35,6 +35,7 @@ export class SignupComponent implements OnInit{
         this.snack.open('Signup Success', '', { duration: 2000 });
         this.router.navigateByUrl('/login');
         
+        
       }
     );
   }
