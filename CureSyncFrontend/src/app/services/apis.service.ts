@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import baseUrl from './helper';
@@ -12,9 +12,8 @@ export class ApisService {
 
   // private headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
 
-  public login(data:any){
-
-    return this.http.post(`${baseUrl}/login`,data);
+  public login(username: string, password: string): Observable<HttpResponse<string>> {
+    return this.http.get<any>(`${baseUrl}/login/${username}/${password}`, { observe: 'response' });
   }
 
   public signup(data:any){

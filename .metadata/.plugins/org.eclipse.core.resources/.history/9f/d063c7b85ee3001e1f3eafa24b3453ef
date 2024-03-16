@@ -57,7 +57,7 @@ public class HomeService {
         // Return failure message in a JSON object
         return ResponseEntity.ok("{\"message\": \"Failed\"}");
     }
-
+}
     
     //patient details
     public PatientDetails savePatientDetails(String patientName, float weight, float height, String bloodGroup,
