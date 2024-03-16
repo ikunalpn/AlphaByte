@@ -1,0 +1,30 @@
+<form [formGroup]="patientDetailsForm" (ngSubmit)="savePatientDetails()">
+    <!-- Form fields for patient details -->
+    <input type="text" formControlName="patientName" name="patientName" placeholder="Patient Name">
+    <input type="number" formControlName="weight" name="weight" placeholder="Weight">
+    <input type="number" formControlName="height" name="height" placeholder="Height">
+    <input type="text" formControlName="bloodGroup" name="bloodGroup" placeholder="Blood Group">
+  
+    <label>Allergies:</label>
+    <select multiple formControlName="allergies" name="allergies">
+      <option *ngFor="let allergy of allergies" [value]="allergy">{{ allergy }}</option>
+    </select>
+  
+    <label>Chronic Illness:</label>
+    <select multiple formControlName="chronicIllness" name="chronicIllness">
+      <option *ngFor="let illness of chronicIllnesses" [value]="illness">{{ illness }}</option>
+    </select>
+  
+    <!-- File input fields for images -->
+    <input type="file" (change)="onMediclaimImageSelected($event)" name="mediclaimImage" placeholder="Mediclaim Image">
+    <input type="file" (change)="onLabReportsImageSelected($event)" name="labReportsImage" placeholder="Lab Reports Image">
+    <input type="file" (change)="onPrescriptionImageSelected($event)" name="prescriptionImage" placeholder="Prescription Image">
+    <input type="file" (change)="onVaccinationImageSelected($event)" name="vaccinationImage" placeholder="Vaccination Image">
+  
+    <label>Vaccination Details:</label>
+    <select multiple formControlName="vaccDetails" name="vaccDetails">
+      <option *ngFor="let vaccine of vaccDetails" [value]="vaccine">{{ vaccine }}</option>
+    </select>
+  
+    <button type="submit">Save Patient Details</button>
+</form>
