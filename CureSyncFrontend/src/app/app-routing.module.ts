@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
 import { PatientComponent } from './pages/patient/patient.component';
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
+import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path:"patient-dashboard",
     component:PatientDashboardComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"docdashboard",
+    component:DocdashboardComponent,
     pathMatch:"full"
   }
 ];
