@@ -12,6 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientComponent } from './pages/patient/patient.component';
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
+import { PatPrescriptionComponent } from './pages/pat-prescription/pat-prescription.component';
+import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.component';
+import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
+import { PatAccountComponent } from './pages/pat-account/pat-account.component';
+import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
 
 @NgModule({
   declarations: [
