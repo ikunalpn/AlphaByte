@@ -3,13 +3,23 @@
         <form>
           <h1>SignUp</h1>
           <div class="input-box">
-            <input type="text" placeholder="Username" required>
+            <input type="text" placeholder="Full Name" required>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Age" required>
             <i class='bx bxs-user'></i>
           </div>
           <div class="input-box">
             <input type="text" placeholder="Contact Number" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
+          <select class = "input-box" id="role" name="role"style ="color: black;">
+            <option value="" disabled selected style ="color: black;">Gender</option>
+            <option value="patient" style ="color: black;">Male</option>
+            <option value="doctor" style ="color: black;">Female</option>
+            <option value="patient" style ="color: black;">Other</option>
+          </select>
           <div class="input-box">
             <input type="text" placeholder="City" required>
             <i class='bx bxs-lock-alt' ></i>
@@ -38,7 +48,7 @@
           </div>
           <button type="submit" class="btn">Sign Up</button>
           <div class="register-link">
-            <p>Don't have an account? <a href="#">Register</a></p>
+            <p>Have an account? <a href="#">Login</a></p>
           </div>
         </form>
       </div>
