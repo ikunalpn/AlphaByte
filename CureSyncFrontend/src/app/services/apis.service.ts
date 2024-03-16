@@ -23,4 +23,27 @@ export class ApisService {
   savePatientDetails(formData: FormData): Observable<any> {
     return this.http.post(`${baseUrl}/details`, formData );
   }
+  getPatientDetails(): Observable<PatientDetails[]> {
+    return this.http.get<PatientDetails[]>(`${baseUrl}/details`);
+  }
+}
+// patient-details.model.ts
+export interface PatientDetails {
+  patientId: number;
+  patientName: string;
+  weight: number;
+  height: number;
+  bloodGroup: string;
+  allergies: string[];
+  chronicIllness: string[];
+  mediclaim: string;
+  labReports: string;
+  prescription: string;
+  vaccination: string;
+  vaccDetails: string[];
+  bp: number;
+  sugar: number;
+  bodyTemp: number;
+  pulseRate: number;
+  spo2: number;
 }

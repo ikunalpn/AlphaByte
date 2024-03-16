@@ -120,6 +120,12 @@ public class HomeController {
 	            return ResponseEntity.notFound().build();
 	        }
 	    }
+	 @GetMapping("/details")
+	    public ResponseEntity<List<PatientDetails>> getPatientDetails() {
+	        
+
+	         return ResponseEntity.ok(details.findAll());
+	    }
 	 
 	 private String getImageUrl(String imagePath) {
 	        if (imagePath == null) {

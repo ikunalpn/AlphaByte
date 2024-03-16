@@ -36,6 +36,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="com.curesync.repo.PatientDetailsRepo"/>
     <fullyQualifiedTypeName name="com.curesync.model.PatientDetails"/>
+    <fullyQualifiedTypeName name="com.curesync.repo.PatientDetailsRepo"/>
 </qualifiedTypeNameHistroy>
