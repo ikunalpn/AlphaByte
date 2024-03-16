@@ -49,15 +49,13 @@ public class HomeService {
             User user = optionalUser.get();
             
             if (passwordEncoder.matches(password, user.getPassword())) {
-                // Return role in a JSON object
-                return ResponseEntity.ok("{\"role\": \"" + user.getRole() + "\"}");
+                return ResponseEntity.ok(user.getRole() + "\"}");
             }
         }
 
-        // Return failure message in a JSON object
-        return ResponseEntity.ok("{\"message\": \"Failed\"}");
+        
+        return ResponseEntity.ok("{\"Failed\"}");
     }
-
     
     //patient details
     public PatientDetails savePatientDetails(String patientName, float weight, float height, String bloodGroup,

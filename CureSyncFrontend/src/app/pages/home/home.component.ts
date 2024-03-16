@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 
-=======
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
->>>>>>> dfa306c2308ea4213c8ba695f3bae979565fa89d
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,9 +8,9 @@ import { OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit{
 
-<<<<<<< HEAD
   ngOnInit() {
     this.animateCounters();
+    localStorage.clear();
     
   }
 
@@ -37,11 +33,6 @@ export class HomeComponent implements OnInit{
       };
       updateCount();
     });
-=======
-  constructor() { }
-
-  ngOnInit(): void {
-    localStorage.clear();
->>>>>>> dfa306c2308ea4213c8ba695f3bae979565fa89d
   }
-}
+
+  }

@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientComponent } from './pages/patient/patient.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { PatientComponent } from './pages/patient/patient.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, 
+    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()
