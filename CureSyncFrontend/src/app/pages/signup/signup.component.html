@@ -1,5 +1,5 @@
-<div class ='new'>
-    <div class="wrapper">
+<div class ='new' style="padding-top: 40px;">
+    <div class="wrapper" >
         <form (ngSubmit)="signup()">
           <h1>SignUp</h1>
           <div class="input-box">
@@ -14,12 +14,17 @@
             <input type="text" placeholder="Contact Number" name="phoneNo" [(ngModel)]="userData.phoneNo" required>
             <i class='bx bxs-lock-alt' ></i>
           </div>
-          <select class = "input-box" id="role" name="role"style ="color: black;"   [(ngModel)]="userData.role">
-            <option value="" disabled selected style ="color: black;">Gender</option>
-            <option value="PATIENT" style ="color: black;">Male</option>
-            <option value="DOCTOR" style ="color: black;">Female</option>
-            
-          </select>
+
+          <div class="input-box">
+            <select name="gender" [(ngModel)]="userData.gender" required>
+              <option value="" disabled selected style="display: none; color: #fff;">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+
           <div class="input-box">
             <input type="text" placeholder="City"  name="city" [(ngModel)]="userData.city" required>
             <i class='bx bxs-lock-alt' ></i>
