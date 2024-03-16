@@ -35,6 +35,52 @@
   </nav>
   
 
-  <div class="section">
-    <h1>Enter personal details</h1>
-  </div>
+  <div class="section px-4 py-8">
+    <div class="bg-white rounded-lg shadow-md p-8">
+      <h2 class="text-3xl font-bold text-center mb-8" style="padding-left: 50px; font-size: 42px;">Personal Details</h2>
+   
+      <div *ngIf="currentQuestionIndex < questions.length" class="max-w-md mx-auto">
+        <h3 class="text-2xl font-bold mb-4">{{ questions[currentQuestionIndex].text }}</h3>
+   
+        <input *ngIf="questions[currentQuestionIndex].type === 'text'" type="text" [(ngModel)]="questions[currentQuestionIndex].answer[0]" class="border border-gray-300 rounded-md p-2 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+   
+        <div *ngIf="questions[currentQuestionIndex].type === 'bloodGroup'" class="flex flex-wrap justify-center mb-4">
+          <div *ngFor="let option of bloodGroups" class="inline-flex items-center px-3 py-2 bg-gray-200 rounded-full mr-2 mb-2 cursor-pointer" [ngClass]="{'bg-red-500 text-white': questions[currentQuestionIndex].answer[0] === option}" (click)="questions[currentQuestionIndex].answer = [option]">
+            <span class="text-lg">
+              
+            </span>
+            <span class="ml-2">{{ option }}</span>
+          </div>
+        </div>
+   
+        <div *ngIf="questions[currentQuestionIndex].type === 'tags'" class="mb-4">
+            <div *ngFor="let tag of questions[currentQuestionIndex].tags" 
+                 class="inline-flex items-center px-3 py-2 rounded-md mr-2 mb-2 cursor-pointer"
+                 (click)="toggleTag(currentQuestionIndex, tag)"
+                 [ngClass]="{ 'bg-gray-200 text-gray-800': !questions[currentQuestionIndex].answer.includes(tag), 'bg-red-500 text-white': questions[currentQuestionIndex].answer.includes(tag) }">
+              <span>{{ tag }}</span>
+            </div>
+          </div>
+          
+          
+        <div *ngIf="questions[currentQuestionIndex].type === 'file'" class="mb-4">
+          <input type="file" (change)="onFileSelected($event)" class="border border-gray-300 rounded-md p-2 w-full">
+          <div *ngIf="questions[currentQuestionIndex].answer.length > 0" class="mt-2">
+            <div *ngFor="let file of questions[currentQuestionIndex].answer" class="bg-green-100 text-green-800 px-4 py-2 rounded-md mb-2">
+              {{ file.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div class="progress h-4 bg-gray-200 rounded-full mb-8">
+        <div class="progress-bar bg-blue-500 h-4 rounded-full" role="progressbar" [ngStyle]="{ 'width': (currentQuestionIndex + 1) / questions.length * 100 + '%' }"></div>
+      </div>
+   
+      <div class="flex justify-between">
+        <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0" class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 transition-colors duration-300">Previous</button>
+        <button *ngIf="currentQuestionIndex !== questions.length - 1" (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 transition-colors duration-300">Next</button>
+        <button *ngIf="currentQuestionIndex === questions.length - 1" (click)="submit()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-300">Submit</button>
+      </div>
+    </div>
+   </div>
