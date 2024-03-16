@@ -1,0 +1,32 @@
+package com.curesync.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curesync.model.User;
+import com.curesync.service.HomeService;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/curesync")
+public class HomeController {
+
+	@Autowired
+	private HomeService service;
+	
+	@GetMapping("/login/{username}/{password}")
+	public String login(@PathVariable("username")String username,@PathVariable("password")String password) {
+		return service.login(username, password);
+	}
+	
+	@PostMapping("/signup")
+	public User signup(@RequestBody User user) {
+		return service.signup(user);
+	}
+}

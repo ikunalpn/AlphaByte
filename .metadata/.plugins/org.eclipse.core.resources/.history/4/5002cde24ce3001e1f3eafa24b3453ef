@@ -1,0 +1,5 @@
+package com.curesync.repo;
+
+public interface PatientsDetailsRepo {
+
+}
