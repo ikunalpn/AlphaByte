@@ -3,10 +3,14 @@
     margin-top: 10px;
 }
 
-.main-section{
+/* .main-section{
    margin-left: 20px;
    margin-right: 20px;
    background: #ddd;
+} */
+
+.body{
+    background: url(/assets/cloud.jpg)no-repeat;
 }
 
 .footer{
@@ -19,16 +23,16 @@
     text-transform: uppercase;
     font-weight: 100;
 }
-
-
-
-
-.showcase{
+.navbar-link {
+    text-decoration: none;
+  }
+  
+/* .showcase{
     background: #ddd;
     padding: 30px ;
     margin-bottom:10px;
     box-sizing: border-box;
-}
+} */
 .row{
     height: 350px;
     background: #fff;
