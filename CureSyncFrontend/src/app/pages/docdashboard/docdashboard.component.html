@@ -26,7 +26,7 @@
   <!-- Main Content -->
   <div class="flex-1 p-6">
     <img src="https://media.licdn.com/dms/image/D4D03AQFaLjlGduTW4w/profile-displayphoto-shrink_400_400/0/1708783318084?e=1715817600&v=beta&t=wMKSwUAGj22Qgz3Mo6MzUfq-2C9cEQu1TlJf5qPEsms" alt="Patient Image" class="w-16 h-16 rounded-full mr-4">
-    <h1 class="text-3xl font-bold mb-6">Welcome, [Doctors Name]</h1>
+    <h1 class="text-3xl font-bold mb-6">Welcome, {{ docname }}</h1>
 
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -47,7 +47,7 @@
     <h1 class="text-3xl font-bold mb-6">Patients</h1>
     <!-- Patients Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div *ngFor="let patient of patients" class="bg-white rounded-lg shadow-md p-6">
+      <div *ngFor="let patient of patients"  class="bg-white rounded-lg shadow-md p-6">
         <h3 class="text-xl font-bold mb-2">{{ patient.patientName }}</h3>
         <p class="text-xl font-bold text-green-500">Weight: {{ patient.weight }} kg</p>
         <p class="text-xl font-bold text-green-500">Height: {{ patient.height }} feet</p>

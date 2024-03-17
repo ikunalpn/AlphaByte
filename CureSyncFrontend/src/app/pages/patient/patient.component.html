@@ -29,7 +29,7 @@
 </nav>
 
   
-<form [formGroup]="patientDetailsForm" (ngSubmit)="submit()" >
+<form [formGroup]="patientDetailsForm"  >
   <div class="section px-4 py-8">
     <div class="bg-white rounded-lg shadow-md p-8">
       <h2 class="text-3xl font-bold text-center mb-8" style="padding-left: 50px; font-size: 42px;">Personal Details</h2>
@@ -105,8 +105,8 @@
    
       <div class="flex justify-between">
         <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0" class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 transition-colors duration-300">Previous</button>
-        <button *ngIf="currentQuestionIndex !== questions.length - 1" (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 transition-colors duration-300">Next</button>
-        <button *ngIf="currentQuestionIndex === questions.length - 1"  class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-300">Submit</button>
+        <button *ngIf="currentQuestionIndex !== questions.length - 1" (click)="nextQuestion()"  [disabled]="currentQuestionIndex === questions.length - 1" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50 transition-colors duration-300">Next</button>
+        <button *ngIf="currentQuestionIndex === questions.length - 1" (click)="submit()"  class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors duration-300">Submit</button>
       </div>
     </div>
    </div>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApisService } from '../../services/apis.service';
 import { PatientDetails } from '../../services/apis.service'; // Import the PatientDetails interface
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
  selector: 'app-docdashboard',
@@ -12,12 +13,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class DocdashboardComponent implements OnInit {
 patients: PatientDetails[] = [];
 
-constructor(private patientService: ApisService, private snack:MatSnackBar) { }
+constructor(private patientService: ApisService, private snack:MatSnackBar, private router:Router) { }
 
 ngOnInit() {
   this.getPatientDetails();
+  this.docname = localStorage.getItem('username');
+  if (!this.docname) {
+    this.router.navigateByUrl('');
+  }
 }
 public file: string | ' ' | undefined;
+public docname: string | null = '';
 
  getPatientDetails() {
    this.patientService.getPatientDetails().subscribe(

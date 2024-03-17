@@ -114,22 +114,23 @@ export class PatientComponent implements OnInit{
     formData.append('bloodGroup', this.selectedBloodGroup.join('') || '');
     formData.append('chronicIllness', this.selectedTags.join('') || ''  );
     formData.append('patientName', localStorage.getItem('patientName') || '');
-    
-
-    this.service.savePatientDetails(formData).subscribe(
-      (response) => {
-        console.log('Patient details saved successfully:', response);
-
-        localStorage.setItem('patientName', this.patientDetailsForm.get('patientName')?.value);
+    localStorage.setItem('patientName', this.patientDetailsForm.get('patientName')?.value);
         localStorage.setItem('weight', this.patientDetailsForm.get('weight')?.value);
         localStorage.setItem('height', this.patientDetailsForm.get('height')?.value);
         localStorage.setItem('bloodGroup', this.selectedBloodGroup.join(''));
         localStorage.setItem('chronicIllness', this.selectedTags.join(''));
-        this.router.navigateByUrl('/patient-dashboard');
-      },
-      (error) => {
-        console.error('Error saving patient details:', error);
-      }
-    );
+    this.router.navigateByUrl('/patient-dashboard');
+
+    // this.service.savePatientDetails(formData).subscribe(
+    //   (response) => {
+    //     console.log('Patient details saved successfully:', response);
+
+        
+        
+    //   },
+    //   (error) => {
+    //     console.error('Error saving patient details:', error);
+    //   }
+    // );
   }
 }
