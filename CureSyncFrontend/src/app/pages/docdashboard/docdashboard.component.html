@@ -1,70 +1,65 @@
 <div class="flex">
-    <!-- Sticky Sidebar -->
-    <div class="sidebar bg-gray-800 text-gray-100 flex flex-col justify-between w-64 px-4 py-6 sticky top-0 h-screen">
-      <div>
-        <h2 class="text-xl font-bold mb-4">Doctors Dashboard</h2>
-        <nav>
-          <a routerLink="/patient-dashboard" class="block py-2 hover:bg-gray-900 rounded text-white">Home</a>
-          <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">My Patients</a>
-          <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Prescribe</a>
-          <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Reports</a>
-          <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Vaccination</a>
-        </nav>
-      </div>
-      <div>
-        <a routerLink="/patient-account" class="block py-2 hover:bg-gray-900 rounded text-white">My Account</a>
-        <a routerLink="/login" class="block py-2 hover:bg-gray-900 rounded text-white">Logout</a>
-      </div>
+  <!-- Sticky Sidebar -->
+  <div class="sidebar bg-gray-800 text-gray-100 flex flex-col justify-between w-64 px-4 py-6 sticky top-0 h-screen">
+    <div>
+      <h2 class="text-xl font-bold mb-4">Doctors Dashboard</h2>
+      <nav>
+        <a routerLink="/patient-dashboard" class="block py-2 hover:bg-gray-900 rounded text-white">Home</a>
+        <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">My Patients</a>
+        <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Prescribe</a>
+        <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Reports</a>
+        <a routerLink="/patient-prescription" class="block py-2 hover:bg-gray-900 rounded text-white">Vaccination</a>
+      </nav>
     </div>
     <!-- Main Content -->
-    <div class="flex-1 p-6">
-      <img src="https://media.licdn.com/dms/image/D4D03AQFaLjlGduTW4w/profile-displayphoto-shrink_400_400/0/1708783318084?e=1715817600&v=beta&t=wMKSwUAGj22Qgz3Mo6MzUfq-2C9cEQu1TlJf5qPEsms"
-        alt="Patient Image" class="w-16 h-16 rounded-full mr-4">
-      <h1 class="text-3xl font-bold mb-6">Welcome, [Doctors Name]</h1>
+    
   
       <!-- Stats Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Upcoming Appointments</h3>
-          <p class="text-4xl font-bold text-green-500">2</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Prescriptions to be given</h3>
-          <p class="text-4xl font-bold text-red-500">5</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Number of Patients</h3>
-          <p class="text-4xl font-bold text-blue-500">15</p>
-        </div>
-      </div>
-  
-      <h1 class="text-3xl font-bold mb-6" style="margin-top: 20px;">Patients</h1>
-      <!-- Patients Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Soham Yeola</h3>
-          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-            (click)="toggleFileInput('soham')">Add Prescription</label>
-          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Mushtaq Ali</h3>
-          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-            (click)="toggleFileInput('soham')">Add Prescription</label>
-          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-bold mb-2">Supranshu Singh</h3>
-          <label for="sohamInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-            (click)="toggleFileInput('soham')">Add Prescription</label>
-          <input id="sohamInput" type="file" class="mt-4 hidden" (change)="uploadFile($event)">
-        </div>
-      </div>
       
+  
       
       
       
     
+    
+  </div>
+  <!-- Main Content -->
+  <div class="flex-1 p-6">
+    <img src="https://media.licdn.com/dms/image/D4D03AQFaLjlGduTW4w/profile-displayphoto-shrink_400_400/0/1708783318084?e=1715817600&v=beta&t=wMKSwUAGj22Qgz3Mo6MzUfq-2C9cEQu1TlJf5qPEsms" alt="Patient Image" class="w-16 h-16 rounded-full mr-4">
+    <h1 class="text-3xl font-bold mb-6">Welcome, [Doctors Name]</h1>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-2">Upcoming Appointments</h3>
+        <p class="text-4xl font-bold text-green-500">2</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-2">Prescriptions to be given</h3>
+        <p class="text-4xl font-bold text-red-500">5</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-2">Number of Patients</h3>
+        <p class="text-4xl font-bold text-blue-500">15</p>
+      </div>
+    </div>
+
+    <h1 class="text-3xl font-bold mb-6">Patients</h1>
+    <!-- Patients Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let patient of patients" class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-2">{{ patient.patientName }}</h3>
+        <p class="text-xl font-bold text-green-500">Weight: {{ patient.weight }} kg</p>
+        <p class="text-xl font-bold text-green-500">Height: {{ patient.height }} feet</p>
+        <p class="text-xl font-bold text-green-500">Blood Group: {{ patient.bloodGroup }}</p>
+        <p class="text-xl font-bold text-green-500">Chronic Illness: {{ patient.chronicIllness.join(', ') }}</p>
+        <label for="prescriptionInput" class="upload-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >Add Prescription</label>
+        <input id="prescriptionInput" type="file" class="mt-4 hidden" (change)="onFileSelected($event)">
+
+        <!-- Add other patient properties as needed -->
+      </div>
+      
     </div>
   </div>
-  
+</div>

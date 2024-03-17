@@ -17,6 +17,7 @@ import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.compo
 import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
 import { PatAccountComponent } from './pages/pat-account/pat-account.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,16 @@ import { DocdashboardComponent } from './pages/docdashboard/docdashboard.compone
     HomeComponent,
     PatientDetailsComponent,
     PatientComponent,
-    PatientDashboardComponent
+    PatientDashboardComponent,
+    DocdashboardComponent,
+    PatPrescriptionComponent,
+    PatLabreportComponent,
+    PatVaccineComponent,
+    PatAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule
+    AppRoutingModule, MatSnackBarModule,  FormsModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule, CommonModule, 
   ],
   providers: [
     provideClientHydration()
