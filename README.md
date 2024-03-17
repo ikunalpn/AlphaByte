@@ -75,7 +75,7 @@ To get started with CureSync Frontend, follow these steps:
    ![image](https://github.com/supranshu/AlphaByte/assets/120621694/511075e1-d085-4dc6-811d-6000d98556b6)
 
 
-4. Video Demonstration
+4. Video Demonstration (CLICK ON ABOVE IMAGE TO WATCH VIDEO)
    [![MedVault+ Demo Video](https://img.youtube.com/vi/4ZeCq2CGJAg/0.jpg)](https://youtu.be/4ZeCq2CGJAg)
 
 
