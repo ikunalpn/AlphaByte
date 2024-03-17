@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +31,8 @@ public class HomeController {
 	@Autowired
 	private HomeService service;
 	
+	@Autowired
+	private PatientDetailsRepo details;
 	
 	@GetMapping("/login/{username}/{password}")
 	public ResponseEntity<String> login(@PathVariable("username")String username,@PathVariable("password")String password) {
@@ -45,21 +47,31 @@ public class HomeController {
 	
 	@PostMapping("/details")
 	public ResponseEntity<PatientDetails> savePatientDetails(
-	        @RequestParam("patientName") String patientName,
+	        @RequestParam(value = "patientName", required = false, defaultValue = "USER") String patientName,
 	        @RequestParam(value = "weight", required = false, defaultValue = "0.0") float weight,
 	        @RequestParam(value = "height", required = false, defaultValue = "0.0") float height,
-	        @RequestParam("bloodGroup") String bloodGroup,
-	        @RequestParam("allergies") String allergiesStr,
-	        @RequestParam("chronicIllness") String chronicIllnessStr,
+	        @RequestParam(value = "bloodGroup", required = false, defaultValue = " ") String bloodGroup,
+	        @RequestParam(value = "allergies", required = false, defaultValue = " ") String allergiesStr,
+	        @RequestParam(value = "chronicIllness", required = false, defaultValue = " ") String chronicIllnessStr,
 	        // Other request parameters
-	        @RequestParam("mediclaimImage") MultipartFile mediclaimImage,
-	        @RequestParam("labReportsImage") MultipartFile labReportsImage,
-	        @RequestParam("prescriptionImage") MultipartFile prescriptionImage,
-	        @RequestParam("vaccinationImage") MultipartFile vaccinationImage,
-	        @RequestParam("vaccDetails") String vaccDetailsStr) {
+	        @RequestParam(value = "mediClaimImage", required = false) MultipartFile mediclaimImage,
+	        @RequestParam(value = "labReportsImage", required = false) MultipartFile labReportsImage,
+	        @RequestParam(value = "presicriptionImage", required = false) MultipartFile prescriptionImage,
+	        @RequestParam(value = "vaccinationImage", required = false) MultipartFile vaccinationImage,
+	        @RequestParam(value = "vaccDetails", required = false, defaultValue = "0.0") String vaccDetailsStr) {
+		
+		PatientDetails pt=details.findByPatientName(patientName);
+		List<String> chronicIllness = Arrays.asList(chronicIllnessStr.split(","));
+		if(pt!=null) {
+			pt.setHeight(height);
+			pt.setWeight(weight);
+			pt.setBloodGroup(bloodGroup);
+			pt.setChronicIllness(chronicIllness);
+			return ResponseEntity.ok(details.save(pt));
+		}
 
 	    List<String> allergies = Arrays.asList(allergiesStr.split(","));
-	    List<String> chronicIllness = Arrays.asList(chronicIllnessStr.split(","));
+	    
 	    List<String> vaccDetails = Arrays.asList(vaccDetailsStr.split(","));
 
 	    System.out.println(vaccDetails +" "+ allergies);
@@ -107,6 +119,12 @@ public class HomeController {
 	        } else {
 	            return ResponseEntity.notFound().build();
 	        }
+	    }
+	 @GetMapping("/details")
+	    public ResponseEntity<List<PatientDetails>> getPatientDetails() {
+	        
+
+	         return ResponseEntity.ok(details.findAll());
 	    }
 	 
 	 private String getImageUrl(String imagePath) {

@@ -5,14 +5,16 @@
 
 .main-section{
    background: url(/assets/cloud.jpg) no-repeat;
+   position: relative;
     background-size: cover;
+
+    /* background-size: cover;
     min-height: 100vh; /* Ensure the background covers the entire viewport */
-    padding-bottom: 100px;
-    position: relative;
+    /* padding-bottom: 100px;  */
 }
 
 .footer {
-    position: fixed;
+    
     bottom: 0;
     left: 0;
     width: 100%;
@@ -23,11 +25,7 @@
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     font-weight: 100;
-    opacity: 0; /* Initially hide the footer */
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
-}
-.show-footer{
-    opacity: 1;
+    
 }
 
 .navbar-link {
@@ -147,3 +145,5 @@
 }
 
 /* Keep footer styles consistent with above */
+
+

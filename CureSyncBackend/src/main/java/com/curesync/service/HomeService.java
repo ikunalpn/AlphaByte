@@ -89,17 +89,17 @@ public class HomeService {
     
     public PatientDetails saveLab(String patientName, MultipartFile labReportImage) {
 		PatientDetails pt=detailsRepo.findByPatientName(patientName);
-		pt.setMediclaim(saveImageToStorage(labReportImage));
+		pt.setLabReports(saveImageToStorage(labReportImage));
 		return detailsRepo.save(pt);
 	}
     public PatientDetails savePrescription(String patientName, MultipartFile prescriptionImage) {
 		PatientDetails pt=detailsRepo.findByPatientName(patientName);
-		pt.setMediclaim(saveImageToStorage(prescriptionImage));
+		pt.setPrescription(saveImageToStorage(prescriptionImage));
 		return detailsRepo.save(pt);
 	}
     public PatientDetails saveVaccination(String patientName, MultipartFile vaccinationImage) {
 		PatientDetails pt=detailsRepo.findByPatientName(patientName);
-		pt.setMediclaim(saveImageToStorage(vaccinationImage));
+		pt.setVaccination(saveImageToStorage(vaccinationImage));
 		return detailsRepo.save(pt);
 	}
     

@@ -20,7 +20,8 @@ export class SignupComponent implements OnInit{
     age:'',
     state:'',
     role:'',
-    phoneNo:''
+    phoneNo:'',
+    gender:''
 
   }
   ngOnInit(): void {
@@ -34,6 +35,8 @@ export class SignupComponent implements OnInit{
         console.log(data);
         this.snack.open('Signup Success', '', { duration: 2000 });
         this.router.navigateByUrl('/login');
+        localStorage.setItem('patientName', this.userData.username);
+        this.router.navigateByUrl('/patient');
         
         
       }
