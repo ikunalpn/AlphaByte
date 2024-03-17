@@ -11,6 +11,7 @@ import { PatLabreportComponent } from './pages/pat-labreport/pat-labreport.compo
 import { PatVaccineComponent } from './pages/pat-vaccine/pat-vaccine.component';
 import { PatAccountComponent } from './pages/pat-account/pat-account.component';
 import { DocdashboardComponent } from './pages/docdashboard/docdashboard.component';
+import { PatHealthStatComponent } from './pages/pat-health-stat/pat-health-stat.component';
 
 const routes: Routes = [
   {
@@ -67,7 +68,12 @@ const routes: Routes = [
     path:"patient-account",
     component:PatAccountComponent,
     pathMatch:"full"
-  }
+  },
+  {
+    path:"patient-stats",
+    component:PatHealthStatComponent,
+    pathMatch:"full"
+  },
 ];
 
 @NgModule({
